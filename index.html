@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Symo-User</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="logo">
+      <span class="logo-icon">🔥</span>
+      <h1>Symo-User</h1>
+    </div>
+  </header>
+
+  <main class="app-content">
+    <section id="sec-home" class="tab-content active">
+      <div class="section-title"><h2>📦 Danh sách File</h2></div>
+      <div id="files-list" class="card-list">
+        <p class="loading">Đang tải danh sách file...</p>
+      </div>
+    </section>
+
+    <section id="sec-social" class="tab-content">
+      <div class="section-title"><h2>🌐 Bảng tin Social</h2></div>
+      <div id="social-list" class="card-list">
+        <p class="loading">Đang tải bài viết...</p>
+      </div>
+    </section>
+
+    <section id="sec-notifications" class="tab-content">
+      <div class="section-title"><h2>🔔 Thông báo Cập nhật</h2></div>
+      <div id="notifications-list" class="card-list">
+        <p class="loading">Đang tải thông báo...</p>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-item active" onclick="switchTab('sec-home', this)">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-label">Trang chủ</span>
+    </button>
+    <button class="nav-item" onclick="switchTab('sec-social', this)">
+      <span class="nav-icon">🌐</span>
+      <span class="nav-label">Social</span>
+    </button>
+    <button class="nav-item" onclick="switchTab('sec-notifications', this)">
+      <span class="nav-icon">🔔</span>
+      <span class="nav-label">Thông báo</span>
+    </button>
+  </nav>
+
+  <script src="supabase.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

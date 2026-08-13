@@ -1,0 +1,59 @@
+:root {
+  --primary: #FF5722;
+  --bg-color: #F4F6F8;
+  --card-bg: #FFFFFF;
+  --text-color: #212121;
+  --text-sub: #757575;
+  --border-color: #E0E0E0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; -webkit-tap-highlight-color: transparent; }
+body { background-color: var(--bg-color); color: var(--text-color); padding-bottom: 70px; }
+
+.app-header { position: sticky; top: 0; background: var(--card-bg); padding: 12px 16px; border-bottom: 1px solid var(--border-color); z-index: 100; }
+.logo { display: flex; align-items: center; gap: 8px; }
+.logo h1 { font-size: 1.2rem; color: var(--primary); }
+
+.app-content { padding: 16px; max-width: 600px; margin: 0 auto; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.section-title { margin-bottom: 16px; font-size: 1.1rem; }
+
+.card-list { display: flex; flex-direction: column; gap: 12px; }
+.card { background: var(--card-bg); border-radius: 12px; padding: 16px; border: 1px solid var(--border-color); overflow: hidden; }
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.card-title { font-weight: bold; font-size: 1rem; }
+.card-meta { font-size: 0.8rem; color: var(--text-sub); }
+
+.card-text { font-size: 0.95rem; line-height: 1.5; white-space: pre-wrap; word-break: break-word; margin-bottom: 8px; }
+
+/* FIX LỖI ẢNH PHÓNG TO TRÀN MÀN HÌNH */
+.card-media-single {
+  margin: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card-media-single img, 
+.card-media-single video {
+  width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+  display: block;
+}
+
+.btn { padding: 10px 16px; border: none; border-radius: 8px; font-weight: bold; font-size: 0.9rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; width: 100%; text-decoration: none; }
+.btn-primary { background: var(--primary); color: white; }
+.btn-outline { border: 1px solid var(--border-color); background: transparent; color: var(--text-color); }
+.badge { background: var(--primary); color: white; font-size: 0.75rem; padding: 3px 8px; border-radius: 12px; font-weight: bold; }
+
+.bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; height: 60px; background: var(--card-bg); display: flex; border-top: 1px solid var(--border-color); z-index: 1000; }
+.nav-item { flex: 1; border: none; background: transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-sub); font-size: 0.75rem; }
+.nav-item.active { color: var(--primary); font-weight: bold; }
+.nav-icon { font-size: 1.25rem; margin-bottom: 2px; }
+.loading { text-align: center; color: var(--text-sub); padding: 20px; }
